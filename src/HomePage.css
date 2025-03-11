@@ -1,0 +1,38 @@
+.container-fluid {
+    background-image: url("../public/animie_mess.jpg"); /* Corrected */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.display-4 {
+    font-family: "Montserrat", sans-serif; /* Modern and clean font */
+    font-size: 3.5rem; /* Slightly larger for better emphasis */
+
+    font-weight: bold;
+    color: #ffffff; /* Light text for visibility */
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.9);
+}
+
+.lead {
+    font-family: "Roboto", sans-serif;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #f1f1f1;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    max-width: 600px;
+    text-align: left; /* Ensures text alignment */
+    margin-left: 15%; /* Moves only the .lead content towards the right */
+}
+
+.logo {
+    width: 120px; /* Adjust this size as needed */
+    height: auto; /* Maintain aspect ratio */
+    margin-top: 20px; /* Space from buttons */
+}
