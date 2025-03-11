@@ -18,7 +18,7 @@ const HomePage = () => {
         transition={{ duration: 0.6 }}
         className="text-center"
       >
-        <h1 className="display-4 fw-bold mb-3">Hostel Mess Feedback System</h1>
+        <h1 className="display-4 fw-bold mb-3"> Mess Feedback System</h1>
         <p className="lead mb-4">Your feedback helps us improve the mess experience. Share your opinions today!</p>
         <div className="d-flex gap-3 justify-content-center">
           <Link to="/login">

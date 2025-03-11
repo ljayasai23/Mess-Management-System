@@ -1,6 +1,6 @@
 /* Gradient Animated Background */
 body {
-    background: linear-gradient(135deg, #e0f7fa, #ffebee);
+background: linear-gradient(135deg, #f3fcbf, #c5e1a5, #a5d6a7, #80cbc4);
     background-size: 400% 400%;
     animation: gradientAnimation 10s ease infinite;
     font-family: 'Arial', sans-serif;
@@ -91,7 +91,7 @@ body {
 
 .text-warning:hover, .text-secondary:hover {
     transform: scale(1.2);
-    color: #ffcc00 !important;
+    color: #0b0d0d6f !important;
 }
 
 /* Comment Box */
