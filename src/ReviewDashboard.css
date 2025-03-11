@@ -1,0 +1,159 @@
+/* Gradient Animated Background */
+body {
+    background: linear-gradient(135deg, #e0f7fa, #ffebee);
+    background-size: 400% 400%;
+    animation: gradientAnimation 10s ease infinite;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Gradient Animation */
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Profile Icon */
+.position-fixed .cursor-pointer {
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.position-fixed .cursor-pointer:hover {
+    transform: scale(1.15);
+    color: #007bff;
+}
+
+/* Profile Dropdown */
+.position-absolute {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    width: 250px;
+    transition: all 0.3s ease-in-out;
+}
+
+.position-absolute:hover {
+    transform: scale(1.05);
+}
+
+/* Dashboard Container with Smooth Drop-in Effect */
+.container {
+    max-width: 600px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+    transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+    /* Slide-in from the top */
+    animation: slideInFromTop 1s ease-out;
+}
+
+/* New Slide-in Animation */
+@keyframes slideInFromTop {
+    0% {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Glowing Effect on Hover */
+.container:hover {
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2), 0px 0px 10px rgba(0, 123, 255, 0.3);
+}
+
+/* Feedback Cards */
+.custom-card {
+    background: #ffffff;
+    border: 1px solid #dee2e6;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 15px;
+    transition: box-shadow 0.3s ease-in-out, transform 0.2s;
+}
+
+/* Card Glow Effect */
+.custom-card:hover {
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2), 0px 0px 10px rgba(255, 193, 7, 0.4);
+    transform: translateY(-5px);
+}
+
+/* Rating Stars */
+.text-warning, .text-secondary {
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out, color 0.3s ease-in-out;
+}
+
+.text-warning:hover, .text-secondary:hover {
+    transform: scale(1.2);
+    color: #ffcc00 !important;
+}
+
+/* Comment Box */
+.form-control {
+    border-radius: 8px;
+    resize: none;
+    transition: border 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.form-control:focus {
+    border-color: #007bff;
+    box-shadow: 0px 0px 8px rgba(0, 123, 255, 0.5);
+}
+
+/* Submit Button with Ripple Effect */
+.btn-primary {
+    background: #007bff;
+    border: none;
+    border-radius: 8px;
+    padding: 12px;
+    font-weight: bold;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.3s ease-in-out, transform 0.2s, box-shadow 0.3s ease-in-out;
+}
+
+/* Ripple Effect */
+.btn-primary::after {
+    content: "";
+    position: absolute;
+    background: rgba(255, 255, 255, 0.3);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.btn-primary:hover {
+    background: #0056b3;
+    transform: translateY(-3px);
+    box-shadow: 0px 4px 12px rgba(0, 123, 255, 0.5);
+}
+
+.btn-primary:active {
+    background: #003d80;
+    transform: translateY(0px);
+}
+
+.btn-primary:focus::after {
+    opacity: 1;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .container {
+        max-width: 85%; /* Adjusted for better visibility with background */
+        padding: 15px;
+    }
+
+    .position-absolute {
+        width: 220px;
+    }
+}

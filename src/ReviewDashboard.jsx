@@ -1,3 +1,4 @@
+import "./ReviewDashboard.css";
 import React, { useState } from "react";
 import Card from "./components/Card";
 import Button from "./components/Button";
@@ -23,64 +24,40 @@ const ReviewDashboard = () => {
     };
 
     return (
-        <motion.div 
-            className="container mt-5" 
-            style={{ minHeight: "100vh", paddingTop: "70px", marginBottom: "70px" }} // Adjusted bottom space
-            initial={{ opacity: 0 }} 
-            animate={{ opacity: 1 }} 
-            transition={{ duration: 1 }}
-        >   
-
-            
-            {/* Profile Section (Fixed to Top-Right) */}
-            <div className="position-fixed top-0 end-0 p-3">
-                <FaUserCircle 
-                    size={40} 
-                    className="text-secondary cursor-pointer" 
-                    onClick={() => setProfileVisible(!profileVisible)} 
-                />
+        <div>
+            {/* Profile Button Outside Dashboard */}
+            <div className="position-fixed" style={{ top: "15px", right: "15px", zIndex: 1050 }}>
+                <FaUserCircle size={40} className="text-secondary cursor-pointer" onClick={() => setProfileVisible(!profileVisible)} />
                 {profileVisible && (
-                    <div className="bg-white border p-3 shadow rounded position-absolute mt-2" style={{ right: 0, width: "250px" }}>
-                        <p><strong>Name:</strong> John Doe</p>
-                        <p><strong>Hostel:</strong> Block D</p>
-                        <p><strong>Mess No:</strong> 8</p>
-                        <Button className="btn btn-danger w-100 mt-2">Logout</Button>
+                    <div className="position-absolute bg-white border p-3 shadow rounded" 
+                         style={{ right: 0, top: "50px", width: "250px", textAlign: "left", borderRadius: "10px", boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.2)" }}>
+                        <h6 className="mb-2 text-dark"><strong>Profile Info</strong></h6>
+                        <p className="mb-1 text-dark"><strong>Name:</strong> John Doe</p>
+                        <p className="mb-1 text-dark"><strong>Hostel:</strong> Block A</p>
+                        <p className="mb-1 text-dark"><strong>Room No:</strong> 101</p>
                     </div>
                 )}
             </div>
 
-            {/* Dashboard Title */}
-            <h2 className="text-primary mb-4">Mess Feedback Dashboard</h2>
-
-            {/* Feedback Questions */}
-            {reviews.map(({ id, question, rating, comment }) => (
-                <Card key={id} className="custom-card">
-                    <div className="card-body">
-                        <h5>{question}</h5>
-                        <div className="d-flex align-items-center mb-2">
-                            {[1, 2, 3, 4, 5].map(star => (
-                                <FaStar 
-                                    key={star} 
-                                    size={25} 
-                                    className={`mx-1 ${star <= rating ? "text-warning" : "text-secondary"}`} 
-                                    onClick={() => handleRating(id, star)} 
-                                    style={{ cursor: "pointer" }} 
-                                />
-                            ))}
+            {/* Dashboard Content */}
+            <motion.div className="container mt-5 mb-5" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1 }}>
+                <h2 className="text-primary text-center mb-4">Mess Feedback Dashboard</h2>
+                {reviews.map(({ id, question, rating, comment }) => (
+                    <Card key={id} className="custom-card">
+                        <div className="card-body">
+                            <h5>{question}</h5>
+                            <div className="d-flex align-items-center">
+                                {[...Array(5)].map((_, index) => (
+                                    <FaStar key={index} size={24} className={index < rating ? "text-warning" : "text-secondary"} onClick={() => handleRating(id, index + 1)} />
+                                ))}
+                            </div>
+                            <textarea className="form-control mt-2" placeholder="Leave a comment..." value={comment} onChange={(e) => handleComment(id, e.target.value)} />
                         </div>
-                        <textarea 
-                            className="form-control mt-2" 
-                            placeholder="Leave a comment..." 
-                            value={comment} 
-                            onChange={(e) => handleComment(id, e.target.value)}
-                        />
-                    </div>
-                </Card>
-            ))}
-
-            {/* Submit Button */}
-            <Button className="mt-4 w-100 btn btn-primary">Submit Feedback</Button>
-        </motion.div>
+                    </Card>
+                ))}
+                <Button className="mt-4 w-100 btn btn-primary">Submit Feedback</Button>
+            </motion.div>
+        </div>
     );
 };
 
