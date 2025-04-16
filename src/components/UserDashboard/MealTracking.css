@@ -1,0 +1,89 @@
+.meal-tracking {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  margin-bottom: 20px;
+}
+
+.meal-tracking h3 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: #333;
+  text-align: center;
+}
+
+.tracking-table {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.table-header {
+  display: contents;
+}
+
+.header-cell {
+  font-weight: 600;
+  padding: 8px;
+  text-align: center;
+  color: #333;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+.table-row {
+  display: contents;
+}
+
+.row-cell {
+  padding: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.date-cell {
+  justify-content: center;
+}
+
+.present {
+  color: #2e7d32;
+  font-weight: bold;
+}
+
+.absent {
+  color: #c62828;
+  font-weight: bold;
+}
+
+.total-cell {
+  font-weight: 500;
+}
+
+.tracking-summary {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.summary-card {
+  text-align: center;
+  padding: 10px;
+  background: #f8f9fa;
+  border-radius: 8px;
+}
+
+.summary-value {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.summary-label {
+  font-size: 0.8rem;
+  color: #666;
+}

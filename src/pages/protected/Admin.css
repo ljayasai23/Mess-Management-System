@@ -1,0 +1,30 @@
+.admin-dashboard {
+    background-color: #f5f7fa;
+    min-height: 100vh;
+  }
+  
+  .admin-content {
+    padding: 20px;
+    margin-top: 70px;
+  }
+  
+  .admin-row {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .admin-row > * {
+    flex: 1;
+  }
+  
+  .admin-row-full {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  @media (max-width: 768px) {
+    .admin-row {
+      flex-direction: column;
+    }
+  }

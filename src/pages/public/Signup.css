@@ -1,0 +1,128 @@
+.signup-page {
+    display: flex;
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .signup-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  .signup-header {
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  
+  .signup-header h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .signup-header p {
+    color: #666;
+  }
+  
+  .signup-form {
+    width: 100%;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #333;
+  }
+  
+  .form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+  }
+  
+  .form-actions {
+    margin-top: 30px;
+  }
+  
+  .signup-btn {
+    width: 100%;
+  }
+  
+  .signup-footer {
+    text-align: center;
+    margin-top: 20px;
+    color: #666;
+  }
+  
+  .signup-footer span {
+    color: #f85741;
+    cursor: pointer;
+    font-weight: 500;
+  }
+  
+  .signup-decoration {
+    flex: 1;
+    position: relative;
+    background: linear-gradient(135deg, #fff6f4 0%, #fef9f5 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .decoration-circle {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(248, 87, 65, 0.1);
+  }
+  
+  .circle-1 {
+    width: 300px;
+    height: 300px;
+    top: -150px;
+    right: -150px;
+  }
+  
+  .circle-2 {
+    width: 200px;
+    height: 200px;
+    bottom: 50px;
+    left: 50px;
+  }
+  
+  .circle-3 {
+    width: 150px;
+    height: 150px;
+    bottom: -50px;
+    right: 100px;
+  }
+  
+  .signup-image-placeholder {
+    width: 400px;
+    height: 400px;
+    background-color: #f0f0f0;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    z-index: 1;
+  }
+  
+  @media (max-width: 768px) {
+    .signup-page {
+      flex-direction: column;
+    }
+    
+    .signup-decoration {
+      display: none;
+    }
+  }

@@ -1,0 +1,96 @@
+.todays-menu {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  width: 100%;
+}
+
+.todays-menu h3 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: #333;
+  text-align: center;
+}
+
+.menu-items {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.menu-item {
+  display: flex;
+  gap: 15px;
+  padding: 10px;
+  border-radius: 8px;
+  align-items: center;
+  transition: transform 0.3s;
+  width: calc(96% - 10px); /* Adjust width to match special item */
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-right: 15px; /* Add right margin */
+}
+
+
+.menu-item:hover {
+  transform: translateY(1px) translateX(3px);
+}
+
+.breakfast {
+  background: #fff8e6;
+  border-left: 4px solid #ffc107;
+}
+
+.lunch {
+  background: #fff5f5;
+  border-left: 4px solid #f85741;
+  transform: rotate(0deg);
+}
+
+.dinner {
+  background: #f0f7ff;
+  border-left: 4px solid #2196f3;
+  transform: rotate(0deg);
+
+}
+
+.meal-icon {
+  font-size: 1.8rem;
+}
+
+.meal-details {
+  flex: 1; /* Allows better alignment */
+}
+
+.meal-details h4 {
+  margin: 0 0 5px 0;
+  color: #333;
+}
+
+.meal-details p {
+  margin: 0;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+/* Fix special item alignment */
+.menu-special {
+  margin-top: 15px;
+  padding: 10px;
+  background: repeating-linear-gradient(135deg, #d4eef8, #fbd3ee 20%, #d4eef8 40%);
+
+  border-radius: 8px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  font-size: 0.9rem;
+  color: #5a3e02; /* Darker text for contrast */
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(255, 173, 51, 0.3); /* Soft glow effect */
+}
+
+
+.special-icon {
+  font-size: 1.2rem;
+}

@@ -1,0 +1,38 @@
+.user-dashboard {
+  background-color: #f5f7fa;
+  min-height: 100vh;
+}
+
+.user-content {
+  padding: 20px;
+  margin-top: 70px; /* Adjusted for fixed navbar */
+}
+
+/* Rest of your existing CSS remains the same */
+.user-row {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.user-row > * {
+  flex: 1;
+}
+
+@media (max-width: 768px) {
+  .user-row {
+    flex-direction: column;
+  }
+  
+  /* Add responsive styles for navbar */
+  .user-navbar {
+    flex-direction: column;
+    padding: 1rem;
+  }
+  
+  .nav-links {
+    margin: 1rem 0;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}

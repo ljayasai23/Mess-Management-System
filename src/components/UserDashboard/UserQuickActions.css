@@ -1,0 +1,32 @@
+.user-quick-actions {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  }
+  
+  .user-quick-actions h3 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .actions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+  }
+  
+  .action-btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 0.9rem;
+    text-align: left;
+    justify-content: flex-start;
+  }
+  
+  @media (max-width: 768px) {
+    .actions-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }

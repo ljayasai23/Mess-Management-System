@@ -1,0 +1,47 @@
+.feedback {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  }
+  
+  .feedback h3 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .rating-container {
+    margin-bottom: 15px;
+    display: flex;
+    gap: 5px;
+  }
+  
+  .star {
+    font-size: 1.8rem;
+    color: #ddd;
+    cursor: pointer;
+    transition: color 0.2s;
+  }
+  
+  .star.filled {
+    color: #ffc107;
+  }
+  
+  .star:hover {
+    color: #ffc107;
+  }
+  
+  .form-group textarea {
+    width: 100%;
+    min-height: 100px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    resize: vertical;
+    margin-bottom: 15px;
+  }
+  
+  .submit-btn {
+    width: 100%;
+  }
