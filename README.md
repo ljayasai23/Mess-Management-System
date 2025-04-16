@@ -1,7 +1,5 @@
 I apologize for the confusion earlier. I'll now create a proper README.md tailored to your exact React frontend structure with screenshot guidance.
 
----
-
 # Mess Management System (React Frontend)
 
 ![Dashboard Preview](src/assets/images/dashboard-preview.jpg)  
