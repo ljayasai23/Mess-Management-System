@@ -1,14 +1,15 @@
 .user-dashboard {
   background-color: #f5f7fa;
   min-height: 100vh;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .user-content {
   padding: 20px;
-  margin-top: 70px; /* Adjusted for fixed navbar */
+  margin-top: 70px;
+  transition: background-color 0.3s ease;
 }
 
-/* Rest of your existing CSS remains the same */
 .user-row {
   display: flex;
   gap: 20px;
@@ -19,12 +20,37 @@
   flex: 1;
 }
 
+/* Dark mode styles */
+.user-dashboard.dark-mode {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+.user-dashboard.dark-mode .user-content {
+  background-color: #121212;
+}
+
+.user-dashboard.dark-mode .card {
+  background-color: #1e1e1e;
+  color: #e0e0e0;
+  border-color: #444;
+}
+
+.user-dashboard.dark-mode .card-title {
+  color: #ffffff;
+}
+
+.user-dashboard.dark-mode .meal-item,
+.user-dashboard.dark-mode .tracking-row {
+  border-bottom-color: #444;
+}
+
+/* Responsive styles */
 @media (max-width: 768px) {
   .user-row {
     flex-direction: column;
   }
   
-  /* Add responsive styles for navbar */
   .user-navbar {
     flex-direction: column;
     padding: 1rem;
