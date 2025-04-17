@@ -119,6 +119,9 @@
   overflow: hidden;
   animation: fadeIn 0.2s ease-out;
   margin-top: 10px;
+  padding: 8px 0; /* Add some vertical padding */
+  /* Prevent horizontal overflow */
+  box-sizing: border-box; /* Include padding in width calculation */
 }
 
 @keyframes fadeIn {
@@ -163,6 +166,11 @@
   text-align: left;
   cursor: pointer;
   font-size: 0.9rem;
+  padding: 12px 15px;
+  box-sizing: border-box; /* Include padding in width calculation */
+  white-space: nowrap; /* Prevent text wrapping */
+  overflow: hidden; /* Hide overflow */
+  text-overflow: ellipsis; /* Show ellipsis for overflow text */
 }
 
 .dropdown-item:hover {
@@ -252,4 +260,107 @@ body.dark-mode .dropdown-header {
 
 body.dark-mode .dropdown-divider {
   background: #444;
+}
+
+/* Add these styles to your existing UserHeader.css */
+.settings-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 15px !important; /* Ensure consistent padding */
+  box-sizing: border-box; /* Include padding in width calculation */
+  width: 100%; /* Ensure full width */
+}
+
+.settings-label {
+  display: flex;
+  align-items: center;
+  flex-grow: 1; /* Allow label to grow */
+  min-width: 0; /* Allow text truncation */
+}
+
+.settings-save-btn {
+  padding: 0.25rem 0.75rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  margin-left: 10px; /* Add some spacing */
+  white-space: nowrap; /* Prevent button text wrapping */
+  flex-shrink: 0; /* Prevent button from shrinking */
+}
+
+.settings-save-btn:hover {
+  background-color: #0069d9;
+}
+
+.settings-saved {
+  font-size: 0.8rem;
+  color: #38a169;
+  margin-right: 0.5rem;
+  display: flex;
+  align-items: center;
+  white-space: nowrap; /* Prevent text wrapping */
+}
+
+/* Dark mode specific styles */
+/* Add these dark mode styles to your existing UserHeader.css */
+body.dark-mode .user-header {
+  background-color: #1e1e1e;
+  color: #ffffff;
+  border-bottom: 1px solid #444;
+}
+
+body.dark-mode .nav-link {
+  color: #e0e0e0;
+}
+
+body.dark-mode .nav-link:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .user-profile {
+  background: linear-gradient(135deg, #3a5f7e 0%, #8a9c5a 100%);
+}
+
+body.dark-mode .user-dropdown {
+  background-color: #2d2d2d;
+  color: #ffffff;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .dropdown-header {
+  background: #252525;
+  border-bottom: 1px solid #444;
+}
+
+body.dark-mode .dropdown-item {
+  color: #e0e0e0;
+}
+
+body.dark-mode .dropdown-item:hover {
+  background: #3a3a3a;
+}
+
+body.dark-mode .dropdown-icon {
+  color: #aaa;
+}
+
+body.dark-mode .dropdown-divider {
+  background: #444;
+}
+
+body.dark-mode .settings-save-btn {
+  background-color: #1e88e5;
+}
+
+body.dark-mode .settings-save-btn:hover {
+  background-color: #1565c0;
+}
+
+body.dark-mode .settings-saved {
+  color: #9ae6b4;
 }
