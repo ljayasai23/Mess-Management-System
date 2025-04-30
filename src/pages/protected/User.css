@@ -62,3 +62,23 @@
     justify-content: center;
   }
 }
+
+/* Add to User.css */
+#meal-history-section {
+  scroll-margin-top: 90px; /* Adjust based on your header height */
+}
+
+.section-header {
+  margin-bottom: 20px;
+}
+
+/* Optional highlight animation */
+@keyframes highlight {
+  0% { background-color: rgba(255, 255, 0, 0.1); }
+  100% { background-color: transparent; }
+}
+
+.highlight {
+  animation: highlight 2s ease-out;
+}
+

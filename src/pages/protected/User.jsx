@@ -1,17 +1,19 @@
-import React, { useContext } from 'react';
+import React, { useContext, useRef } from 'react';
 import { DarkModeContext } from '../../context/DarkModeContext';
 import UserHeader from '../../components/UserDashboard/UserHeader';
 import MealPlanStatus from '../../components/UserDashboard/MealPlanStatus';
-import MealTracking from '../../components//UserDashboard/MealTracking';
+import MealTracking from '../../components/UserDashboard/MealTracking';
 import TodaysMenu from '../../components/UserDashboard/TodaysMenu';
 import Feedback from '../../components/UserDashboard/Feedback';
 import AbsentComplaints from '../../components/UserDashboard/AbsentComplaints';
 import UserQuickActions from '../../components/UserDashboard/UserQuickActions';
+import BackToTop from '../../components/common/BackToTop';
 import './User.css';
 
 const User = () => {
   const { darkMode } = useContext(DarkModeContext);
-  
+  const complaintsRef = useRef(null);
+
   const mealPlan = {
     name: 'Premium Plan',
     remainingDays: 12,
@@ -42,18 +44,24 @@ const User = () => {
         <div className="user-row">
           <MealPlanStatus plan={mealPlan} />
           <TodaysMenu menu={todayMenu} />
-          <UserQuickActions />
+          <UserQuickActions complaintsRef={complaintsRef} />
         </div>
         
-        <div className="user-row">
+        <div className="user-row" id="meal-history-section">
           <MealTracking history={mealHistory} />
         </div>
         
-        <div className="user-row">
-          <Feedback />
-          <AbsentComplaints />
+        <div className="user-row combined-section" id="feedback-complaints-section">
+          <div className="feedback-container">
+            <Feedback />
+          </div>
+          <div className="complaints-container">
+            <AbsentComplaints ref={complaintsRef} />
+          </div>
         </div>
       </div>
+      
+      <BackToTop />
     </div>
   );
 };
