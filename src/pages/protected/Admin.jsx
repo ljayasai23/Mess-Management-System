@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { DarkModeContext } from '../../context/DarkModeContext';
 import AdminHeader from '../../components/AdminDashboard/AdminHeader';
 import StatisticsOverview from '../../components/AdminDashboard/StatisticsOverview';
 import UserManagement from '../../components/AdminDashboard/UserManagement';
@@ -6,8 +7,11 @@ import MealPlanManagement from '../../components/AdminDashboard/MealPlanManageme
 import InteractiveCharts from '../../components/AdminDashboard/InteractiveCharts';
 import QuickActions from '../../components/AdminDashboard/QuickActions';
 import './Admin.css';
+import BackToTop from '../../components/common/BackToTop';
 
 const Admin = () => {
+  const { darkMode } = useContext(DarkModeContext);
+
   const statsData = {
     totalUsers: 124,
     activeUsers: 98,
@@ -27,21 +31,22 @@ const Admin = () => {
   ];
 
   return (
-    <div className="admin-dashboard">
+     <div className={`admin-dashboard ${darkMode ? 'dark-mode' : ''}`}>
       <AdminHeader />
       <div className="admin-content">
         <div className="admin-row">
           <StatisticsOverview data={statsData} />
           <QuickActions />
         </div>
-        <div className="admin-row">
+        <div id="user-management-section" className="admin-row">
           <UserManagement users={usersData} />
           <MealPlanManagement plans={mealPlans} />
         </div>
-        <div className="admin-row-full">
+        <div id="consumption-section" className="admin-row-full">
           <InteractiveCharts />
         </div>
       </div>
+      <BackToTop />
     </div>
   );
 };

@@ -1,0 +1,12 @@
+/* Layout only */
+.admin-profile-page {
+    min-height: 100vh;
+    background-color: #f5f7fa;
+  }
+  
+  .admin-profile-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    padding-top: 80px; /* Header space */
+  }

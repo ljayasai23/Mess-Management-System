@@ -9,6 +9,12 @@ import Admin from './pages/protected/Admin';
 import User from './pages/protected/User';
 import Profile from './pages/protected/Profile';
 import { DarkModeContext, DarkModeProvider } from './context/DarkModeContext';
+import MessDetailsPage from './pages/protected/MessDetailsPage';
+import AuditLogsPage from './pages/protected/AuditLogsPage';
+import BillingPage from './pages/protected/BillingPage';
+import AdminProfilePage from './pages/protected/AdminProfilePage';
+
+
 function App() {
   return (
     <DarkModeProvider>
@@ -24,7 +30,14 @@ function App() {
           <Route path="/user/profile" element={<Profile />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
+
+          {/* Admin Routes */}
           <Route path="/admin" element={<Admin />} />
+          <Route path="/admin/profile" element={<AdminProfilePage />} />
+          <Route path="/admin/mess-details" element={<MessDetailsPage />} />
+          <Route path="/admin/audit-logs" element={<AuditLogsPage />} />
+          <Route path="/admin/billing" element={<BillingPage />} />
+          
 
           {/* 404 Page */}
           <Route path="*" element={<div>404 Not Found</div>} />

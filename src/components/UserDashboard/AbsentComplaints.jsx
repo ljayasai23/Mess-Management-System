@@ -1,13 +1,18 @@
-import React, { useState } from 'react';
-import AnimatedButton  from '../common/AnimatedButton';
-import  Alert  from '../common/Alert';
+import React, { useState, forwardRef, useImperativeHandle } from 'react';
+import AnimatedButton from '../common/AnimatedButton';
+import Alert from '../common/Alert';
 import './AbsentComplaints.css';
 
-const AbsentComplaints = () => {
-  const [type, setType] = useState('absent');
+const AbsentComplaints = forwardRef((props, ref) => {
+  const [type, setType] = useState(props.defaultType || 'absent');
   const [date, setDate] = useState('');
   const [reason, setReason] = useState('');
   const [submitted, setSubmitted] = useState(false);
+
+  // Expose functions to parent via ref
+  useImperativeHandle(ref, () => ({
+    setActiveTab: (tabType) => setType(tabType)
+  }));
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -25,20 +30,22 @@ const AbsentComplaints = () => {
       {submitted && (
         <Alert message="Your submission has been recorded!" type="success" />
       )}
+      
       <div className="tabs">
-        <button 
+        <div 
           className={`tab ${type === 'absent' ? 'active' : ''}`}
           onClick={() => setType('absent')}
         >
-          Report Absence
-        </button>
-        <button 
+          Absence
+        </div>
+        <div 
           className={`tab ${type === 'complaint' ? 'active' : ''}`}
           onClick={() => setType('complaint')}
         >
-          File Complaint
-        </button>
+          Complaint
+        </div>
       </div>
+
       <form onSubmit={handleSubmit}>
         <div className="form-group">
           <label>Date</label>
@@ -49,6 +56,7 @@ const AbsentComplaints = () => {
             required
           />
         </div>
+        
         <div className="form-group">
           <label>
             {type === 'absent' ? 'Reason for Absence' : 'Complaint Details'}
@@ -56,17 +64,20 @@ const AbsentComplaints = () => {
           <textarea
             value={reason}
             onChange={(e) => setReason(e.target.value)}
+            placeholder="Please provide details..."
             required
           />
         </div>
-        <AnimatedButton 
-          text={type === 'absent' ? 'Submit Absence' : 'Submit Complaint'} 
-          type="submit"
-          className="submit-btn"
-        />
+        
+        <div className="button-container">
+          <AnimatedButton 
+            text={type === 'absent' ? 'Submit Absence' : 'Submit Complaint'} 
+            type="submit"
+          />
+        </div>
       </form>
     </div>
   );
-};
+});
 
 export default AbsentComplaints;
