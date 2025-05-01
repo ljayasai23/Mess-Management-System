@@ -1,0 +1,97 @@
+.profilePictureContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.profilePictureWrapper {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid #e0e0e0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.profilePicture {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.fileInput {
+  display: none;
+}
+
+.buttonGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  width: 100%;
+  max-width: 180px;
+}
+
+.changePhotoButton {
+  background: white;
+  color: blue;
+  border: solid 1px blue;
+  padding: 0.7rem 1.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 10px rgba(63, 81, 181, 0.3);
+  width: 100%;
+  text-align: center;
+}
+
+.changePhotoButton:hover {
+  background: white;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 12px rgba(63, 81, 181, 0.4);
+}
+
+.changePhotoButton:active {
+  transform: translateY(0);
+}
+
+.removePhotoButton {
+  background: #f44336;
+  color: white;
+  border: none;
+  padding: 0.7rem 1.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 10px rgba(244, 67, 54, 0.3);
+  width: 100%;
+  text-align: center;
+}
+
+.removePhotoButton:hover {
+  background: #d32f2f;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 12px rgba(244, 67, 54, 0.4);
+}
+
+.removePhotoButton:active {
+  transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .profilePictureWrapper {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .buttonGroup {
+    max-width: 150px;
+  }
+}

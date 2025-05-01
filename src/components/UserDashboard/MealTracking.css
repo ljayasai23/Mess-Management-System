@@ -1,19 +1,22 @@
-.meal-tracking {
+/* Meal Tracking - Scoped Styles */
+.mt-container {
   background: white;
   border-radius: 10px;
   padding: 20px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
   margin-bottom: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.meal-tracking h3 {
+.mt-title {
   margin-top: 0;
   margin-bottom: 20px;
   color: #333;
   text-align: center;
+  font-size: 1.2rem;
 }
 
-.tracking-table {
+.mt-table {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 10px;
@@ -21,69 +24,121 @@
   width: 100%;
 }
 
-.table-header {
+.mt-table-header {
   display: contents;
 }
 
-.header-cell {
+.mt-header-cell {
   font-weight: 600;
   padding: 8px;
   text-align: center;
   color: #333;
   border-bottom: 2px solid #e0e0e0;
+  font-size: 0.9rem;
 }
 
-.table-row {
+.mt-table-row {
   display: contents;
 }
 
-.row-cell {
+.mt-row-cell {
   padding: 8px;
   display: flex;
   justify-content: center;
   align-items: center;
   border-bottom: 1px solid #f0f0f0;
+  font-size: 0.9rem;
 }
 
-.date-cell {
+.mt-date-cell {
   justify-content: center;
 }
 
-.present {
+.mt-present {
   color: #2e7d32;
   font-weight: bold;
 }
 
-.absent {
+.mt-absent {
   color: #c62828;
   font-weight: bold;
 }
 
-.total-cell {
+.mt-total-cell {
   font-weight: 500;
 }
 
-.tracking-summary {
+.mt-summary {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 15px;
   margin-top: 20px;
 }
 
-.summary-card {
+.mt-summary-card {
   text-align: center;
   padding: 10px;
   background: #f8f9fa;
   border-radius: 8px;
+  transition: transform 0.2s ease;
 }
 
-.summary-value {
+.mt-summary-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.mt-summary-value {
   font-size: 1.2rem;
   font-weight: bold;
   color: #333;
 }
 
-.summary-label {
+.mt-summary-label {
   font-size: 0.8rem;
   color: #666;
+  margin-top: 5px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .mt-table {
+    grid-template-columns: 1fr;
+  }
+
+  .mt-table-header {
+    display: none;
+  }
+
+  .mt-table-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #eee;
+    border-radius: 5px;
+  }
+
+  .mt-row-cell {
+    border-bottom: none;
+    justify-content: space-between;
+    padding: 5px;
+  }
+
+  .mt-row-cell::before {
+    content: attr(data-label);
+    font-weight: 500;
+    color: #666;
+  }
+
+  .mt-date-cell::before { content: "Date: "; }
+  .mt-row-cell:nth-child(2)::before { content: "Breakfast: "; }
+  .mt-row-cell:nth-child(3)::before { content: "Lunch: "; }
+  .mt-row-cell:nth-child(4)::before { content: "Dinner: "; }
+  .mt-total-cell::before { content: "Total: "; }
+
+  .mt-summary {
+    grid-template-columns: 1fr;
+  }
 }

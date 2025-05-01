@@ -1,0 +1,159 @@
+/* Scoped Mess Details Page Styles */
+.mdp-container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Header Styles */
+.mdp-header {
+  border-bottom: 1px solid #eee;
+  padding-bottom: 1rem;
+  margin-bottom: 2rem;
+}
+
+.mdp-header h1 {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+}
+
+.mdp-header-icon {
+  font-size: 1.8rem;
+  color: #3f51b5;
+}
+
+/* Tabs Navigation */
+.mdp-tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: -1px;
+}
+
+.mdp-tab {
+  padding: 0.75rem 1.5rem;
+  background: transparent;
+  border: none;
+  border-bottom: 3px solid transparent;
+  font-weight: 500;
+  color: #666;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.mdp-tab:hover {
+  color: #3f51b5;
+}
+
+.mdp-tab.active {
+  color: #3f51b5;
+  border-bottom-color: #3f51b5;
+  background: #f5f7ff;
+}
+
+/* Content Sections */
+.mdp-detail-card {
+  background: #f8f9fa;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.mdp-detail-card h2 {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #3f51b5;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  font-size: 1.3rem;
+}
+
+.mdp-detail-row {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #eee;
+}
+
+.mdp-detail-row span {
+  color: #666;
+  font-weight: 500;
+}
+
+.mdp-detail-row strong {
+  color: #333;
+}
+
+/* Rules List */
+.mdp-rules-list {
+  padding-left: 1.5rem;
+}
+
+.mdp-rules-list li {
+  margin-bottom: 0.75rem;
+  color: #444;
+}
+
+/* Action Buttons */
+.mdp-action-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.mdp-edit-btn {
+  background: #3f51b5;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.mdp-edit-btn:hover {
+  background: #303f9f;
+}
+
+.mdp-print-btn {
+  background: white;
+  color: #3f51b5;
+  border: 1px solid #3f51b5;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.mdp-print-btn:hover {
+  background: #f5f7ff;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .mdp-tabs {
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+  }
+  
+  .mdp-detail-row {
+    grid-template-columns: 1fr;
+    gap: 0.25rem;
+  }
+  
+  .mdp-action-buttons {
+    flex-direction: column;
+  }
+  
+  .mdp-edit-btn,
+  .mdp-print-btn {
+    width: 100%;
+  }
+}
