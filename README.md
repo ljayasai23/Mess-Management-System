@@ -1,6 +1,5 @@
 # Mess Management System (React Frontend)
 
-![Dashboard Preview](src/assets/images/dashboard-preview.jpg)  
 _A modern React-based interface for hostel mess management_
 
 ## Project Structure
@@ -152,10 +151,36 @@ theme.css
 
 ## Key Features
 
-- **Admin Dashboard**: User management, statistics, meal planning
-- **User Dashboard**: Meal tracking, menu viewing, feedback submission
-- **Reusable Components**: Animated buttons, modals, alerts
-- **Responsive Design**: Works on all device sizes
+### Admin Features
+
+- **Interactive Dashboard**: Real-time statistics and visual data representation
+- **User Management**: Create, view, update, and delete user accounts
+- **Meal Plan Configuration**: Set up and modify weekly meal plans
+- **Billing System**: Generate and manage invoices and payments
+- **Audit Logs**: Detailed record of system activities
+- **Profile Management**: Update admin profile and security settings
+- **Mess Details**: Manage mess information and settings
+- **Reporting**: Generate various system reports
+
+### User Features
+
+- **Meal Attendance**: Mark daily meal presence/absence
+- **Complaint System**: Report missing or unsatisfactory meals
+- **Feedback Mechanism**: Provide feedback on mess services
+- **Meal Plan Status**: View current meal subscription
+- **Today's Menu**: Check daily meal offerings
+- **Profile Management**: Update personal information
+- **Security Settings**: Change password and security preferences
+
+## Technology Stack
+
+- **Frontend**: React.js with functional components
+- **Styling**: CSS Modules for component-specific styles
+- **State Management**: React Context API
+- **Routing**: React Router
+- **Custom Hooks**: For reusable logic
+- **Icons**: SVG vector icons
+- **Build Tool**: Create React App
 
 ## Screenshot Guide
 
@@ -175,29 +200,6 @@ Add these to `/src/assets/images/`:
    - `login-screen.jpg` (Login.jsx)
    - `signup-screen.jpg` (Signup.jsx)
 
-4. **Mobile Views**:
-   - `mobile-menu.jpg` (TodaysMenu.jsx on mobile)
-   - `mobile-dashboard.jpg` (User.jsx on mobile)
-
-## How to Display Screenshots
-
-```markdown
-## UI Showcase
-
-### Admin Interface
-
-![Admin Dashboard](src/assets/images/admin-dashboard-full.jpg)  
-_Complete admin view with statistics and management tools_
-
-### Key Components
-
-| Component           | Preview                                             |
-| ------------------- | --------------------------------------------------- |
-| Statistics Overview | ![Stats](src/assets/images/statistics-overview.jpg) |
-| Meal Tracker        | ![Tracker](src/assets/images/meal-tracking.jpg)     |
-```
-````
-
 ## Development Setup
 
 1. Clone repository
@@ -215,3 +217,4 @@ _Complete admin view with statistics and management tools_
 - Uses CSS modules for component-specific styles
 - Animation classes from `animations.css`
 - Theme colors defined in `theme.css`
+````
