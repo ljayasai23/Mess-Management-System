@@ -21,13 +21,38 @@ src/
 | | user.svg
 | |  
 | +---images/
-| admin-avatar.png
-| meal-icon.png
-| mess-hero.png
-| mess-login.png
-| stats-icon.png
-| user-avatar.png
-|  
+| | admin-avatar.png
+| | meal-icon.png
+| | mess-hero.png
+| | mess-login.png
+| | stats-icon.png
+| | user-avatar.png
+| +---screenshots/
+| | +---admin/
+| | | admin_audit_logs.jpg
+| | | admin_billing.jpg
+| | | admin_dash.jpg
+| | | admin_dash1.jpg
+| | | admin_dash2.jpg
+| | | admin_mess_details.jpg
+| | | admin_profile.jpg
+| | | admin_profile1.jpg
+| | |
+| | +---home/
+| | | home.jpg
+| | | login.jpg
+| | | signup.jpg
+| | |
+| | +---user/
+| | | user_about_mess.jpg
+| | | user_contact.jpg
+| | | user_dash.jpg
+| | | user_dash1.jpg
+| | | user_dash2.jpg
+| | | user_dropdown.jpg
+| | | user_profile.jpg
+| | | user_profile1.jpg
+|
 +---components/
 | +---AdminDashboard/
 | | AdminHeader.css
