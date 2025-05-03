@@ -1,5 +1,5 @@
 const express = require('express');
-const connectDB = require('./db');  // Ensure correct path to db.js
+const connectDB = require('./db.js');  // Ensure correct path to db.js
 const app = express();
 const itemModel = require('./models/Items.js'); // Ensure correct path to Items.js
 const cors = require('cors');

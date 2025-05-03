@@ -5,47 +5,150 @@ _A modern React-based interface for hostel mess management_
 
 ## Project Structure
 
-```markdown
+````markdown
 src/
-├── components/
-│ ├── AdminDashboard/
-│ │ ├── AdminHeader.jsx
-│ │ ├── StatisticsOverview.jsx
-│ │ ├── UserManagement.jsx
-│ │ ├── MealPlanManagement.jsx
-│ │ ├── InteractiveCharts.jsx
-│ │ └── QuickActions.jsx
-│ ├── UserDashboard/
-│ │ ├── UserHeader.jsx
-│ │ ├── MealPlanStatus.jsx
-│ │ ├── MealTracking.jsx
-│ │ ├── TodaysMenu.jsx
-│ │ ├── Feedback.jsx
-│ │ ├── AbsentComplaints.jsx
-│ │ └── UserQuickActions.jsx
-│ └── common/
-│ ├── AnimatedButton.jsx
-│ ├── Alert.jsx
-│ ├── LoadingSpinner.jsx
-│ └── Modal.jsx
-├── pages/
-│ ├── Home.jsx
-│ ├── About.jsx
-│ ├── Contact.jsx
-│ ├── Login.jsx
-│ ├── Signup.jsx
-│ ├── Admin.jsx
-│ └── User.jsx
-├── styles/
-│ ├── main.css
-│ ├── animations.css
-│ └── theme.css
-├── assets/
-│ ├── images/ # Store screenshots here
-│ └── icons/
-├── App.js
-└── index.js
-```
+| App.css
+| App.js
+| App.test.js
+| index.css
+| index.js
+|  
++---assets/
+| +---icons/
+| | meal.svg
+| | settings.svg
+| | stats.svg
+| | user.svg
+| |  
+| +---images/
+| | admin-avatar.png
+| | meal-icon.png
+| | mess-hero.png
+| | mess-login.png
+| | stats-icon.png
+| | user-avatar.png
+| +---screenshots/
+| | +---admin/
+| | | admin_audit_logs.jpg
+| | | admin_billing.jpg
+| | | admin_dash.jpg
+| | | admin_dash1.jpg
+| | | admin_dash2.jpg
+| | | admin_mess_details.jpg
+| | | admin_profile.jpg
+| | | admin_profile1.jpg
+| | |
+| | +---home/
+| | | home.jpg
+| | | login.jpg
+| | | signup.jpg
+| | |
+| | +---user/
+| | | user_about_mess.jpg
+| | | user_contact.jpg
+| | | user_dash.jpg
+| | | user_dash1.jpg
+| | | user_dash2.jpg
+| | | user_dropdown.jpg
+| | | user_profile.jpg
+| | | user_profile1.jpg
+|
++---components/
+| +---AdminDashboard/
+| | AdminHeader.css
+| | AdminHeader.jsx
+| | AdminProfilePicture.jsx
+| | AdminProfilePicture.module.css
+| | AdminProfileView.jsx
+| | AdminProfileView.module.css
+| | AdminSecuritySettings.css
+| | AdminSecuritySettings.jsx
+| | InteractiveCharts.css
+| | InteractiveCharts.jsx
+| | MealPlanManagement.css
+| | MealPlanManagement.jsx
+| | QuickActions.jsx
+| | QuickActions.module.css
+| | StatisticsOverview.css
+| | StatisticsOverview.jsx
+| | UserManagement.css
+| | UserManagement.jsx
+| |  
+| +---common/
+| | Alert.css
+| | Alert.jsx
+| | AnimatedButton.css
+| | AnimatedButton.jsx
+| | BackToTop.css
+| | BackToTop.jsx
+| | LoadingSpinner.jsx
+| | Modal.jsx
+| |  
+| +---hooks/
+| | useClickOutside.jsx
+| |  
+| +---UserDashboard/
+| AbsentComplaints.css
+| AbsentComplaints.jsx
+| Feedback.css
+| Feedback.jsx
+| MealPlanStatus.css
+| MealPlanStatus.jsx
+| MealTracking.css
+| MealTracking.jsx
+| ProfileForm.css
+| ProfileForm.jsx
+| ProfilePicture.css
+| ProfilePicture.jsx
+| ProfileView.css
+| ProfileView.jsx
+| SecuritySettings.css
+| SecuritySettings.jsx
+| TodaysMenu.css
+| TodaysMenu.jsx
+| UserHeader.css
+| UserHeader.jsx
+| UserNavbar.css
+| UserNavbar.jsx
+| UserQuickActions.css
+| UserQuickActions.jsx
+|  
++---context/
+| DarkModeContext.jsx
+|  
++---pages/
+| +---protected/
+| | About.css
+| | About.jsx
+| | Admin.css
+| | Admin.jsx
+| | AdminProfilePage.css
+| | AdminProfilePage.jsx
+| | AuditLogsPage.css
+| | AuditLogsPage.jsx
+| | BillingPage.css
+| | BillingPage.jsx
+| | Contact.css
+| | Contact.jsx
+| | MessDetailsPage.css
+| | MessDetailsPage.jsx
+| | Profile.css
+| | Profile.jsx
+| | User.css
+| | User.jsx
+| |  
+| +---public/
+| Home.css
+| Home.jsx
+| Login.css
+| Login.jsx
+| Signup.css
+| SignUp.jsx
+|  
++---styles/
+animations.css
+main.css
+theme.css
 
 ## Key Features
 
@@ -93,6 +196,7 @@ _Complete admin view with statistics and management tools_
 | Statistics Overview | ![Stats](src/assets/images/statistics-overview.jpg) |
 | Meal Tracker        | ![Tracker](src/assets/images/meal-tracking.jpg)     |
 ```
+````
 
 ## Development Setup
 
