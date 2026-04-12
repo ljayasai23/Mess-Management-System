@@ -6,18 +6,18 @@ import './ProfileView.css';
 
 const ProfileView = () => {
   const [user, setUser] = useState({
-    name: 'User One',
-    email: 'user1@example.com',
-    phone: '+1 (555) 123-4567',
-    mealPlan: 'Premium',
+    name: 'Test Student',
+    email: 's123456@rguktrkv.ac.in',
+    phone: '+91 9876543210',
+    mealPlan: 'Standard Plan',
     joinDate: 'January 15, 2023'
   });
 
   return (
     <div className="profile-view">
       <div className="profile-header">
-        <h2>My Profile</h2>
-        <div className="profile-status">
+        <div style={{display: 'flex', gap: '15px', alignItems: 'center'}}>
+          <h2>My Profile</h2>
           <span className="status-badge active">Active</span>
         </div>
       </div>

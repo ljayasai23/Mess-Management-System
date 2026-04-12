@@ -16,15 +16,15 @@ import AdminProfilePage from './pages/protected/AdminProfilePage';
 
 
 function App() {
-  const [items,setItems] = useState([]);
-  useEffect( () => {
-    const fetchData = async () => {
-      const data = await res.json();
-      console.log(data);
-      setItems(data.items);
-    }
-   fetchData();
-  },[]);
+  // const [items,setItems] = useState([]);
+  // useEffect( () => {
+  //   const fetchData = async () => {
+  //     const data = await res.json();
+  //     console.log(data);
+  //     setItems(data.items);
+  //   }
+  //  fetchData();
+  // },[]);
   return (
     <DarkModeProvider>
       <Router>
