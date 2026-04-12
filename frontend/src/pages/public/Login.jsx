@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import AnimatedButton from '../../components/common/AnimatedButton';
 import Alert from '../../components/common/Alert';
 import loginImage from '../../assets/images/mess-login.png';
 import './Login.css';
@@ -26,98 +25,99 @@ const Login = () => {
     }
   };
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
     setIsLoading(true);
     setError('');
 
-    // Simple validation
     if (!credentials.username || !credentials.password) {
-      setError('Please enter both username and password');
+      setError('Please enter both email and password');
       setIsLoading(false);
       return;
     }
 
-    // Simulate API call
-    setTimeout(() => {
-      const user = VALID_CREDENTIALS[credentials.username];
-      
-      if (user && user.password === credentials.password) {
-        // Successful login
+    try {
+      const response = await fetch('http://localhost:5000/api/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: credentials.username, password: credentials.password })
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
         setError('Login successful! Redirecting...');
+        localStorage.setItem('user', JSON.stringify(data.user));
+        localStorage.setItem('role', data.role);
         
-        // Navigate based on role
-        if (user.role === 'admin') {
-          navigate('/admin');
-        } else {
-          navigate('/user');
-        }
+        setTimeout(() => {
+          if (data.role === 'admin') {
+            navigate('/admin');
+          } else {
+            navigate('/user');
+          }
+        }, 1000);
       } else {
-        setError('Invalid username or password');
+        setError(data.error || 'Invalid username or password');
+        setIsLoading(false);
       }
-      
+    } catch (err) {
+      setError('Server error, please try again.');
       setIsLoading(false);
-    }, 1000);
+    }
   };
 
   return (
     <div className="login-page">
-      <div className="login-container animate-on-scroll">
-        <div className="login-header">
-          <h2>Welcome Back!</h2>
-          <p>Login to your mess management account</p>
+      <div className="login-container">
+        <div className="login-card">
+          <div className="login-header">
+            <h2>Welcome Back</h2>
+            <p>Login to your mess management dashboard</p>
+          </div>
           
+          {error && <Alert message={error} type={error.includes('success') ? 'success' : 'error'} onClose={() => setError('')} />}
+          
+          <form onSubmit={handleLogin} className="login-form">
+            <div className="form-group">
+              <label htmlFor="username">Username</label>
+              <input
+                type="text"
+                id="username"
+                placeholder="Enter your email"
+                value={credentials.username}
+                onChange={(e) => setCredentials({...credentials, username: e.target.value})}
+                required
+              />
+            </div>
+            
+            <div className="form-group">
+              <label htmlFor="password">Password</label>
+              <input
+                type="password"
+                id="password"
+                placeholder="Enter your password"
+                value={credentials.password}
+                onChange={(e) => setCredentials({...credentials, password: e.target.value})}
+                required
+              />
+            </div>
+            
+            <div className="form-actions">
+              <button
+                type="submit"
+                disabled={isLoading}
+                className="btn btn-primary login-btn"
+              >
+                {isLoading ? 'Logging in...' : 'Sign In'}
+              </button>
+            </div>
+          </form>
+          
+          <div className="login-footer">
+            <p>Don't have an account? <span onClick={() => navigate('/signup')}>Create one</span></p>
+          </div>
         </div>
-        
-        {error && <Alert message={error} type={error.includes('success') ? 'success' : 'error'} onClose={() => setError('')} />}
-        
-        <form onSubmit={handleLogin} className="login-form">
-          <div className="form-group">
-            <label htmlFor="username">Username</label>
-            <input
-              type="text"
-              id="username"
-              value={credentials.username}
-              onChange={(e) => setCredentials({...credentials, username: e.target.value})}
-              required
-            />
-          </div>
-          
-          <div className="form-group">
-            <label htmlFor="password">Password</label>
-            <input
-              type="password"
-              id="password"
-              value={credentials.password}
-              onChange={(e) => setCredentials({...credentials, password: e.target.value})}
-              required
-            />
-          </div>
-          
-          <div className="form-actions">
-            <AnimatedButton 
-              text={isLoading ? 'Logging in...' : 'Login'} 
-              type="submit"
-              disabled={isLoading}
-              className="login-btn"
-            />
-          </div>
-        </form>
-        
-        <div className="login-footer">
-          <p>Don't have an account? <span onClick={() => navigate('/signup')}>Sign up</span></p>
-        </div>
-      </div>
-      
-      <div className="login-decoration">
-        <div className="decoration-circle circle-1"></div>
-        <div className="decoration-circle circle-2"></div>
-        <div className="decoration-circle circle-3"></div>
-        <img 
-          src={loginImage} 
-          alt="Mess Management Illustration" 
-          className="login-image"
-        />
       </div>
     </div>
   );

@@ -26,8 +26,7 @@ const Admin = () => {
   ];
 
   const mealPlans = [
-    { id: 1, name: 'Standard Plan', description: '3 meals per day', price: '$300/month' },
-    { id: 2, name: 'Premium Plan', description: '3 meals + snacks', price: '$450/month' },
+    { id: 1, name: 'Standard Plan', description: 'Flexible Pay-As-You-Eat', price: 'Varies based on consumption' }
   ];
 
   return (
